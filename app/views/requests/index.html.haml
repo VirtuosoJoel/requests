@@ -1,0 +1,36 @@
+- title "Requests"
+
+.table-div
+  .header-div
+    .namecolumn Name
+    .partcolumn Part Number
+    .smallcolumn Qty
+    .smallcolumn Requested
+    .smallcolumn Close Request
+    .smallcolumn Cancel Request
+  .body-div= render @requests
+  
+%br/
+  
+.form-div
+
+%br/
+
+%p= link_to "New Request", new_request_url, :class => 'new'
+
+%br/
+%br/
+
+.average-div
+  %label Average wait time today:
+  %p= Request.average_mins + ' minutes'
+
+%br/
+%br/
+
+
+%p= link_to "Closed today", "/date/#{ Time.now.year }/#{ Time.now.month }/#{ Time.now.day }"
+
+%br/
+
+%p= link_to "PRINT", '#', onclick: "printpage()"

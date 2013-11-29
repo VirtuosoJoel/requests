@@ -1,0 +1,19 @@
+- title "Requests"
+
+.table-div
+  .header-div
+    .namecolumn Name
+    .partcolumn Part Number
+    .smallcolumn Qty
+    .smallcolumn Requested
+    .smallcolumn Closed
+  - @records.each do |r|
+    .row{:id => dom_id(r)}
+    .namecolumn= r.name
+    .partcolumn= r.part
+    .smallcolumn= r.qty
+    .smallcolumn= r.created_at.localtime
+    .smallcolumn= r.updated_at.localtime
+    
+    
+%p= link_to "Main Page", '/'

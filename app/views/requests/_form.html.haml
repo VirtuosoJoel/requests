@@ -1,0 +1,14 @@
+.row.form
+  = form_for request, :remote => true, :html => {:class => 'remote-form'} do |f|
+    .namecolumn
+      =f.label :name
+      =f.text_field :name
+    .partcolumn
+      =f.label :part
+      =f.text_field :part
+    .smallcolumn
+      =f.label :qty
+      =f.text_field :qty, :value => 1
+    /.smallcolumn= Time.now.localtime.strftime( '%d/%m/%y %k:%M' ) 
+    .smallcolumn= f.submit
+    .smallcolumn= link_to 'Cancel', '#', :class => 'cancel'

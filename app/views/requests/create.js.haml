@@ -1,0 +1,6 @@
+removeForm();
+
+- content = escape_javascript(render(@request))
+appendContent("#{content}")
+
+$("#request_#{@request.id}").effect("highlight", {}, 3000);

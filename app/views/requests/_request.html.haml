@@ -1,0 +1,7 @@
+.row{:id => dom_id(request)}
+  .namecolumn= request.name
+  .partcolumn= request.part
+  .smallcolumn= request.qty
+  .smallcolumn= request.created_at.localtime.strftime( '%d/%m/%y %k:%M' )
+  .smallcolumn= link_to 'Close', request_path( request, :request => { :closed => true } ), :remote => true, :method => :put, :style=>'font-size:150%'
+  .smallcolumn= link_to 'Cancel', request, :data => { :confirm => 'Are you sure?' }, :method => :delete, :remote => true, :class => 'remote-form'
