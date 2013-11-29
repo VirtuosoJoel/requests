@@ -1,5 +1,3 @@
-require 'mail'
-
 class Request < ActiveRecord::Base
   attr_accessible :part, :description, :qty, :closed, :name
   
