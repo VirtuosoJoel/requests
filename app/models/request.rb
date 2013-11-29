@@ -21,7 +21,7 @@ class Request < ActiveRecord::Base
     options = { :address              => "mail.centrexservices.co.uk",
                 :port                 => 25,
                 :user_name            => 'Automatic.Emailer',
-                :password             => 'centrex',
+                :password             => '***',
                 :authentication       => 'plain',
                 :enable_starttls_auto => true }
     
