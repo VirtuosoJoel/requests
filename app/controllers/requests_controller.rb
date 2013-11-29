@@ -34,10 +34,8 @@ class RequestsController < ApplicationController
   
   def update
     @request = Request.find(params[:id])
-    already_closed = @request[:closed]
     respond_to do |format|
       if @request.update_attributes(params[:request])
-        #@request.send_complete_email unless already_closed
         format.js
       else
         format.js { render :partial => 'error' }
