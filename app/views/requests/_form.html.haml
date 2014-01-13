@@ -10,5 +10,5 @@
       =f.label :qty
       =f.text_field :qty, :value => 1
     /.smallcolumn= Time.now.localtime.strftime( '%d/%m/%y %k:%M' ) 
-    .smallcolumn= f.submit
+    .smallcolumn= f.submit( :onclick => "this.disabled = true" )
     .smallcolumn= link_to 'Cancel', '#', :class => 'cancel'
